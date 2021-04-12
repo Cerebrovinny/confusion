@@ -6,7 +6,8 @@ import {
 
 import { Control, LocalForm, Errors } from 'react-redux-form';
 
-const required = (val) => val && val.length;
+//// validators
+const required = (val) => val && val.length; //value > 0
 const maxLength = (len) => (val) => !(val) || (val.length <= len);
 const minLength = (len) => (val) => (val) && (val.length >= len);
 
@@ -46,6 +47,8 @@ class CommentForm extends Component{
                     <span className="fa fa-comments fa-lg"></span> Submit Comment
                 </Button>
 
+
+                {/* commentform  Modal */}
                 <Modal isOpen={this.state.isCommentFormModalOpen} toggle={this.toggleCommentFormModal} >
                     <ModalHeader toggle={this.toggleCommentFormModal}> Submit Comment </ModalHeader>
                     <ModalBody>
@@ -82,6 +85,8 @@ class CommentForm extends Component{
                                 </Col>
                             </Row>
 
+
+                            {/* author */}
                             <Row className="form-group">
                                 <Label htmlFor="author" md={12}> Your Name </Label>
                                 <Col md={12}>
@@ -105,6 +110,10 @@ class CommentForm extends Component{
                                 </Col>
                             </Row>
 
+
+
+
+                            {/* comment */}
                             <Row className="form-group">
                                 <Label htmlFor="comment" md={12}>Comment</Label>
                                 <Col md={12}>
